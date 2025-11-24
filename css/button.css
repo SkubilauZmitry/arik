@@ -1,0 +1,14 @@
+.button {
+  width: 58px;
+  height: 21px;
+  font-family: "Satoshi";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 160%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #dac5a7;
+}
+.button--fw {
+  width: 100%;
+}

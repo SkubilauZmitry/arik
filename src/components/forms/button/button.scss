@@ -1,0 +1,102 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+.button {
+	display: inline-flex;
+	font-family: "Satoshi-Regular" sans-serif;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: $lightColor;
+	background: $bgButtonColor;
+	padding: 10px 16px;
+	line-height: 1.46;
+	transition: all 0.3s;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid $bgButtonColorBr;
+	border-radius: 3px;
+	&--icon-arrow {
+		flex-direction: row-reverse;
+		gap: 12px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			background: $lightColor;
+			color: $bgButtonColor;
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}
+
+[class*="--icon-ur"]::before {
+	content: "\f111";
+}
+
+.button-light {
+	background: $lightColor;
+	color: $bgButtonColor;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $lightColor;
+			background: $bgButtonColor;
+			padding: 10px 16px;
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+	&--icon-arrow {
+		flex-direction: row-reverse;
+		gap: 12px;
+	}
+}
+.button-text {
+	display: inline-flex;
+	font-family: "Satoshi-Regular" sans-serif;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: $lightColor;
+	transition: all 0.3s;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	&--icon-big {
+		font-size: 15px;
+	}
+	&--fw {
+		width: 100%;
+	}
+}
+
+[class*="--icon-urc"]::before {
+	content: "\f111";
+	width: 32px;
+	height: 32px;
+	border: 1px solid rgba(85, 77, 68, 1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+[class*="--icon-urc"]:hover::before {
+	content: "\f111";
+	color: $bgButtonColor;
+	background-color: $lightColor;
+	transition: all 0.5s;
+}
+
+[class*="--icon-big"]::before {
+	content: "\f110";
+	width: 48px;
+	height: 48px;
+	transform: rotate(180deg);
+}
+[class*="--icon-big"]:hover::before {
+	content: "\f110";
+	color: $bgButtonColor;
+	background-color: $lightColor;
+	transition: all 0.5s;
+}

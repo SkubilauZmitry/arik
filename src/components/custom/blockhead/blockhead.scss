@@ -1,0 +1,69 @@
+.blockhead {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 16px;
+    text-wrap: balance;
+    pointer-events: none;
+    &__container {
+        pointer-events: auto;
+    }
+    &--gap-8 {
+        gap: 8px;
+    }
+    &__label,
+    &__title {
+        color: $lightColor;
+        max-width: 1000px;
+        font-family: $fontSatoshi;
+    }
+    &__label {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 128px;
+        line-height: 1;
+        text-align: center;
+        &--size-80 {
+            font-size: 80px;
+        }
+        &--size-96 {
+            font-size: 80px;
+        }
+        &--size-160 {
+            @include adaptiveValue("font-size", 160, 45);
+            @media (min-width: toEm(850)) {
+                @include adaptiveValue("font-size", 128, 45);
+            }
+        }
+        & span {
+            font-family: $fontGambetta;
+        }
+    }
+
+    &__text {
+        font-family: $fontFamily;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.7;
+        text-align: center;
+        color: $mainColor;
+        max-width: 600px;
+        &--size-18 {
+            font-size: 18;
+            @include adaptiveValue("font-size", 18, 14);
+        }
+        &--size-24 {
+            font-size: 24;
+            @include adaptiveValue("font-size", 24, 16);
+        }
+    }
+}

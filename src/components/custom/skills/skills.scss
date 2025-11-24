@@ -1,0 +1,40 @@
+.skill {
+    @include adaptiveValue("font-size", 48, 15);
+    background: $bgColorheader;
+    border: 1px solid $bgColorGrey;
+    border-radius: 2px;
+    padding: 48px;
+    &:before {
+        counter-increment: item;
+        content: counter(item);
+    }
+
+    &__title {
+        font-family: $fontSatoshi;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $lightColor;
+        > * {
+            margin-bottom: 8px;
+        }
+    }
+    &__title-link {
+        &:hover {
+            text-decoration: underline;
+            transition: all 0.3s;
+        }
+    }
+    &__text {
+        font-family: "Chillax";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.8;
+        color: rgba(218, 197, 167, 0.6);
+        margin-bottom: 32px;
+    }
+}

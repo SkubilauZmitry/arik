@@ -1,0 +1,65 @@
+.page {
+	.hero {
+	}
+	.cliets {
+	}
+	&__skills {
+	}
+}
+
+//========================================================================================================================================================
+
+// hero
+
+.hero {
+	@include adaptiveValue("padding-block", 50, 15);
+	&__container {
+		text-align: center;
+		min-height: 100svh;
+		display: grid;
+		align-content: center;
+	}
+
+	&__image {
+	}
+
+	&__img {
+		width: 100vw;
+		height: 55svh;
+		object-fit: contain;
+		mix-blend-mode: lighten;
+	}
+	&__blockhead {
+		translate: 0 -12%;
+	}
+}
+
+// cliets
+
+.cliets {
+	@include adaptiveValue("padding-top", 128, 15);
+	@include adaptiveValue("padding-button", 80, 15);
+	&__container {
+		display: flex;
+		justify-content: space-evenly;
+		gap: 30 px;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+	}
+}
+
+// skills
+
+.skills {
+	@include adaptiveValue("margin-top", 80, 15);
+	@include adaptiveValue("margin-botton", 163, 15);
+	counter-reset: item;
+	&__container {
+		display: grid;
+		gap: 32px;
+		grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+	}
+}

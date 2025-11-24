@@ -1,0 +1,71 @@
+@font-face { 
+	font-family: "iconfont"; 
+	font-display: swap;
+	src: url("D://WEB/Project/arik/arik/src/assets/svgicons/preview/iconfont.woff2?1873a43c0315ebf27f7f865d2015fc2b") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
+}
+	[class*="--icon-youtube"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-whatsapp"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-twitter"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-twitcht"]::before { 
+		content: "\f104"; 
+	} 
+	[class*="--icon-tiktok"]::before { 
+		content: "\f105"; 
+	} 
+	[class*="--icon-Plus"]::before { 
+		content: "\f106"; 
+	} 
+	[class*="--icon-phone"]::before { 
+		content: "\f107"; 
+	} 
+	[class*="--icon-minus"]::before { 
+		content: "\f108"; 
+	} 
+	[class*="--icon-logo"]::before { 
+		content: "\f109"; 
+	} 
+	[class*="--icon-link"]::before { 
+		content: "\f10a"; 
+	} 
+	[class*="--icon-instagram"]::before { 
+		content: "\f10b"; 
+	} 
+	[class*="--icon-info"]::before { 
+		content: "\f10c"; 
+	} 
+	[class*="--icon-envelope-simple"]::before { 
+		content: "\f10d"; 
+	} 
+	[class*="--icon-check"]::before { 
+		content: "\f10e"; 
+	} 
+	[class*="--icon-behance"]::before { 
+		content: "\f10f"; 
+	} 
+	[class*="--icon-arrow"]::before { 
+		content: "\f110"; 
+	} 
+	[class*="--icon-arrow-up"]::before { 
+		content: "\f111"; 
+	} 
+	[class*="--icon-arrow-up-right"]::before { 
+		content: "\f112"; 
+	} 
+	[class*="--icon-arrow-up-left"]::before { 
+		content: "\f113"; 
+	} 
+	[class*="--icon-arrow-right"]::before { 
+		content: "\f114"; 
+	} 
+	[class*="--icon-arrow-down-left"]::before { 
+		content: "\f115"; 
+	} 
