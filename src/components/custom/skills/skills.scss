@@ -1,12 +1,30 @@
+.skills {
+    @include adaptiveValue("margin-top", 80, 15);
+    @include adaptiveValue("margin-botton", 163, 15);
+    counter-reset: item;
+    &__container {
+        // display: grid;
+        gap: 32px;
+        // grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .skill {
     @include adaptiveValue("font-size", 48, 15);
     background: $bgColorheader;
     border: 1px solid $bgColorGrey;
     border-radius: 2px;
     padding: 48px;
+    flex: 1 1 350px;
     &:before {
         counter-increment: item;
-        content: counter(item);
+        content: "0" counter(item);
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 1.5px;
+        margin-bottom: 4px;
     }
 
     &__title {
