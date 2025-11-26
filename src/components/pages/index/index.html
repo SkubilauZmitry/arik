@@ -21,8 +21,8 @@
     </div>
   </section>
 
-  <!-- section cliets -->
-  <section class="page__cliets clients">
+  <!-- cliets -->
+  <div class="page__cliets clients">
     <div class="cliets__container">
       <div class="cliets__item">
         <img src="@img/clients/1.svg" alt="Image" />
@@ -43,9 +43,9 @@
         <img src="@img/clients/6.svg" alt="Image" />
       </div>
     </div>
-  </section>
-  <!-- sections skills -->
-  <article class="page__skills skills">
+  </div>
+  <!-- skills -->
+  <div class="page__skills skills">
     <div class="skills__container">
       <include
         src="@components/custom/skills/skills.html"
@@ -75,5 +75,38 @@
       >
       </include>
     </div>
-  </article>
+  </div>
+
+  <section class="page__selected-work selected-work">
+    <div class="selected-work__container">
+      <div class="selected-work__header">
+        <h2 class="selected-work__header-title">Selected <span>Work</span></h2>
+        <a href="" data-fls-button class="button-text button-text--icon-urc"
+          >See all</a
+        >
+      </div>
+      <div class="selected-work__item works">
+        <!-- <include src="@components/custom/work/work.html"></include> -->
+        <article data-fls-work class="item-work">
+          <a href="#" class="item-work__image">
+            <img src="@img/work/2.png" alt="Image" class="item-work__img" />
+          </a>
+          <div class="item-work__body">
+            <h5 class="item-work__title">
+              <a href="#" class="item-work__title-link">Space </a>
+            </h5>
+            <a href="#" class="item-work__text">Webdesign</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
+
+<!-- locals='{
+        "link":"#",
+        "image":"@img/work/1.png",
+        "name":"Space",
+        "category":"Webdesign",
+        "category-link":"#"
+      }' -->
