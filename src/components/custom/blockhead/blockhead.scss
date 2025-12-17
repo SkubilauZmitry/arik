@@ -3,6 +3,7 @@
     display: grid;
     justify-content: center;
     justify-items: center;
+    @include adaptiveValue("gap", 16, 10);
     gap: 16px;
     text-wrap: balance;
     pointer-events: none;
@@ -28,7 +29,7 @@
 
     &__title {
         font-weight: 300;
-        font-size: 128px;
+        @include adaptiveValue("font-size", 128, 45);
         line-height: 1;
         text-align: center;
         &--size-80 {
@@ -36,6 +37,7 @@
         }
         &--size-96 {
             font-size: 80px;
+            @include adaptiveValue("font-size", 96, 38);
         }
         &--size-160 {
             @include adaptiveValue("font-size", 160, 45);
@@ -53,6 +55,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
+        @include adaptiveValue("font-size", 20, 15);
         line-height: 1.7;
         text-align: center;
         color: $mainColor;

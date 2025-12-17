@@ -1,0 +1,39 @@
+.icon-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    &__item {
+        flex-shrink: 0;
+    }
+
+    &__link {
+        display: flex;
+        width: 46px;
+        aspect-ratio: 1;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid $bgColorGrey;
+        background-color: $bgColorheader;
+        backdrop-filter: blur(15px);
+        transition: all 0.3s;
+        @media (any-hover: hover), (pointer: fine) {
+            &:hover {
+                background-color: $lightColorHover;
+            }
+        }
+    }
+
+    &__link--icon-twitter {
+    }
+
+    &__link--icon-instagram {
+    }
+
+    &__link--icon-tiktok {
+    }
+
+    &__link--icon-behance {
+    }
+}

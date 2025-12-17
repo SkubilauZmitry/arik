@@ -1,6 +1,5 @@
 .skills {
-    @include adaptiveValue("margin-top", 80, 15);
-    @include adaptiveValue("margin-botton", 163, 15);
+    @include adaptiveValue("margin-botton", 163, 60);
     counter-reset: item;
     &__container {
         display: grid;
@@ -41,9 +40,11 @@
         }
     }
     &__title-link {
-        &:hover {
-            text-decoration: underline;
-            transition: all 0.3s;
+        transition: color 0.3s;
+        @media (any-hover: hover), (pointer: fine) {
+            &:hover {
+                color: $lightColorHover;
+            }
         }
     }
     &__text {

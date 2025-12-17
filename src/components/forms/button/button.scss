@@ -100,3 +100,25 @@
 	background-color: $lightColor;
 	transition: all 0.5s;
 }
+
+[class*="--icon-dc"]::before {
+	content: "\f111";
+	width: 46px;
+	aspect-ratio: 1;
+	border: 1px solid rgba(85, 77, 68, 1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: rotate(-180deg);
+}
+
+[class*="--icon-urr"]::before {
+	transform: rotate(45deg);
+	font-size: 16px;
+}
+[class*="--icon-urr"]:hover::before {
+	transform: rotate(45deg);
+	color: $lightColor;
+	transition: all 0.5s;
+}

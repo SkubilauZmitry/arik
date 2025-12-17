@@ -5,6 +5,8 @@
 	}
 	&__skills {
 	}
+	&__selected-work {
+	}
 }
 
 //========================================================================================================================================================
@@ -34,92 +36,383 @@
 	}
 }
 
+//========================================================================================================================================================
+
 // cliets
 
 .cliets {
-	@include adaptiveValue("padding-top", 128, 15);
-	@include adaptiveValue("padding-button", 80, 15);
 	&__container {
+		@include adaptiveValue("padding-bottom", 80, 60);
 		display: flex;
 		justify-content: space-evenly;
-		gap: 30 px;
+		gap: 30px;
 		align-items: center;
 		flex-wrap: wrap;
+	}
+}
+
+//========================================================================================================================================================
+
+// work
+
+.selected-work {
+	&__container {
+		@include adaptiveValue("padding-top", 160, 60);
+		@include adaptiveValue("padding-bottom", 160, 60);
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 15px;
+		@include adaptiveValue("margin-bottom", 32, 15);
+		@media (min-width: toEm($mobileSmall)) {
+			padding-inline: 32px;
+		}
+	}
+
+	&__header-title {
+		font-family: $fontSatoshi;
+		font-style: normal;
+		font-weight: 300;
+		@include adaptiveValue("font-size", 64, 32);
+		line-height: 1.1;
+		color: $lightColor;
+		& span {
+			font-family: $fontGambetta;
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+// process
+
+.process {
+	@include adaptiveValue("padding-bottom", 160, 60);
+	&__container {
 	}
 
 	&__item {
 	}
 }
-
-.works {
-	display: grid;
-	gap: 32px;
-	grid-template-columns: repit(auto-fill, minmax(min(50px, 100%), 1fr));
-	// background-color: #fff;
-	// display: flex;
-	// flex-wrap: wrap;
-	// margin: 0px auto;
+.blockhead {
+	@include adaptiveValue("margin-bottom", 48, 15);
 }
-.item-work {
-	position: relative;
-	// flex: 1 1 350px;
-	// margin: 32px;
-	&__image {
+.item-process {
+	&__hedear {
 		position: relative;
-		aspect-ratio: 684/513;
+		height: 100px;
+		@include adaptiveValue("height", 158, 20);
+		text-align: center;
+		display: grid;
+		grid-template-rows: 46px 1fr;
+		justify-items: center;
+		gap: 16px;
 		&::after {
 			content: "";
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			background: url("@img/work/Noise.png") center/ cover no-repeat;
+			width: 1px;
+			background-color: $bgColorGrey;
 		}
-		&__img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		@media (max-width: toEm(889.98)) {
+			display: none;
+		}
+	}
+
+	&__arrow {
+		&::before {
+			content: "\2192";
+			width: 46px;
+			aspect-ratio: 1;
+			border: 1px solid rgba(85, 77, 68, 1);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform: rotate(90deg);
+			@include adaptiveValue("font-size", 24, 20);
+			@media (max-width: toEm(889.98)) {
+				width: 40px;
+			}
 		}
 	}
 
 	&__body {
-		position: absolute;
-		right: 32px;
-		left: 32px;
-		bottom: 32px;
-		background: $bgColorheader;
-		border: 1px solid $bgColorGrey;
-		backdrop-filter: blur(15px);
-		border-radius: 2px;
-		padding: 12px 16px;
-	}
-
-	&__title {
-	}
-
-	&__title-link {
-	}
-
-	&__text {
+		display: flex;
+		flex-direction: column;
+		counter-reset: item;
 	}
 }
 
-.block1 {
-	width: 100%;
-	height: 200px;
-	background-color: #22bed9;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-	// display: grid;
-	// gap: 32px;
-	// grid-template: 80px/ 80px;
-	// justify-content: center;
-	// align-content: center;
+.items-procces {
+	flex: 0 1 auto;
+	position: relative;
+	@include adaptiveValue("padding-left", 99.5, 20, 2, $containerWidth, 890);
+	padding-right: 0;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 1px;
+		height: 100%;
+		left: -0.05px;
+		background-color: $bgColorGrey;
+	}
+	&::after {
+		counter-increment: item;
+		position: absolute;
+		z-index: 2;
+		content: counter(item, decimal-leading-zero);
+		translate: -50% -50%;
+		top: 50%;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border: 1px solid $bgColorGrey;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 13px;
+		letter-spacing: 1.5;
+		outline: 16px solid $bgColor;
+		background: $colorFull;
+	}
+	&__body {
+		background: $colorFull;
+		@include adaptiveValue("padding", 48, 20);
+		border-radius: 2px;
+	}
+	&:last-child {
+		&::before {
+			content: "";
+			height: 50%;
+		}
+	}
+	@media (min-width: toEm(890)) {
+		width: 50%;
+		align-self: flex-end;
+		&:nth-child(even) {
+			padding-left: 0;
+			@include adaptiveValue("padding-right", 99.5, 20, 2, $containerWidth, 890);
+			align-self: flex-start;
+			&::before {
+				content: "";
+				right: 0;
+				left: auto;
+			}
+			&::after {
+				left: auto;
+				translate: 50% -50%;
+				right: 0;
+			}
+		}
+		&:not(:first-child) {
+			margin-top: -50px;
+		}
+	}
+	@media (max-width: toEm(889.98)) {
+		&::before {
+			display: none;
+		}
+		&::after {
+			top: 0px;
+			left: 10px;
+			outline: 5px solid $bgColor;
+		}
+		&:not(:last-child) {
+			margin-block: 20px;
+		}
+	}
+}
 
-	.block2 {
-		display: grid;
-		background-color: #d0e655;
+// rewiers
+
+.rewiers {
+	&__container {
+		max-width: 1200px;
+	}
+
+	&__blockhead {
+	}
+
+	&__items {
+		max-width: 1200px;
+		margin: 0px auto;
+	}
+	// &__grid {
+	// 	width: 50%;
+	// }
+
+	&__item {
+		margin-bottom: 32px;
+	}
+}
+.blockhead {
+	@include adaptiveValue("margin-bottom", 64, 15);
+}
+.item-rewiers {
+	@include adaptiveValue("padding", 48, 20);
+	border-radius: 2px;
+	border: 1px solid $bgColorGrey;
+	background-color: $bgColorheader;
+	backdrop-filter: blur(15px);
+	> * {
+		margin-bottom: 32px;
+	}
+
+	&__icon {
+	}
+
+	&__title {
+		font-family: $fontSatoshi;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 1.3;
+		letter-spacing: 1px;
+		color: $lightColor;
+		margin-bottom: 8px;
+		transition: all 0.3s;
+		@media (any-hover: hover), (pointer: fine) {
+			&:hover {
+				color: $lightColorHover;
+			}
+		}
+	}
+
+	&__text {
+		line-height: 1.8;
+	}
+
+	&__author {
+	}
+	@media (min-width: toEm(750)) {
+		width: calc(50% - 16px);
+	}
+}
+.author-rewier {
+	display: flex;
+	align-items: start;
+	gap: 16px;
+	&__avatar {
+		aspect-ratio: 1;
+		flex-shrink: 0;
+		width: 60px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+
+	&__body {
+		align-self: center;
+		@media (max-width: toEm($mobile)) {
+			flex-direction: column;
+		}
+	}
+
+	&__name {
+		font-family: $fontSatoshi;
+		font-size: 13px;
+		line-height: 1.6;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: $lightColor;
+	}
+
+	&__company {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+	> * {
+		&:last-child {
+		}
+		margin-bottom: 0px;
+	}
+}
+
+// about
+
+.about-module {
+	@include adaptiveValue("padding-top", 50, 30);
+	@include adaptiveValue("padding-bottom", 232, 60);
+	&__container {
+		max-width: 1200px;
+		margin: 0px auto;
+	}
+
+	&__header {
+		position: relative;
+		text-align: center;
+		@include adaptiveValue("margin-bottom", 50, 30);
+	}
+
+	&__img {
+		display: inline-flex;
+		background-color: $bgColor;
+		position: relative;
+		z-index: 2;
+		box-shadow: 0 -50px 50px 50px rgba(14, 14, 14, 1);
+	}
+
+	&__image {
+		height: 55svh;
+		object-fit: contain;
+		mix-blend-mode: lighten;
+	}
+
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0px, -50%);
+		@include adaptiveValue("font-size", 128, 45);
+	}
+	&__name {
+		margin-right: 100px;
+		font-family: $fontSatoshi;
+		color: $lightColor;
+		font-weight: 300;
+		& span {
+			font-family: $fontGambetta;
+		}
+	}
+
+	&__body {
+		display: flex;
+		row-gap: 10px;
+		@include adaptiveValue("column-gap", 64, 20);
+		@media (max-width: toEm($mobile)) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__title {
+		flex: 1 1 100%;
+		font-family: $fontSatoshi;
+		@include adaptiveValue("font-size", 48, 32);
+		font-weight: 300;
+		color: $lightColor;
+		span {
+			display: block;
+			font-family: $fontGambetta;
+		}
+
+		@media (max-width: toEm($mobile)) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__content {
+		flex: 1 1 100%;
+	}
+
+	&__content-text {
+		line-height: 1.6;
+		&:not(:last-child) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__content-icon {
 	}
 }
